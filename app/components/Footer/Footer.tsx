@@ -1,16 +1,16 @@
-import type { LinksFunction } from "@remix-run/node";
+// import type { LinksFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import FoxLogo from "../Foxes/FoxLogo";
 import Rule from "../Rule";
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: "stylesheet",
-      href: "app/components/Footer/footer.css",
-    },
-  ];
-};
+// export const links: LinksFunction = () => {
+//   return [
+//     {
+//       rel: "stylesheet",
+//       href: "app/components/Footer/footer.css",
+//     },
+//   ];
+// };
 
 export function Copyright() {
   const currentYear = new Date().getFullYear();

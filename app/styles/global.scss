@@ -134,7 +134,7 @@ a {
   .ice {
     position: relative;
     cursor: pointer;
-    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👀</text></svg>") 15 15,auto;
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='100' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🧊 🧊 👶🏼</text></svg>") 45 15,auto;
 
     &::before {
       content: "";
@@ -145,7 +145,7 @@ a {
       height: 0;
       aspect-ratio: 5/4;
       z-index: 1;
-      background-image: url('../../assets/vanilla-ice.png');
+      background-image: url('./vanilla-ice.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;

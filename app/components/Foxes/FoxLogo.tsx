@@ -1,13 +1,13 @@
-import type { LinksFunction } from "@remix-run/node";
+// import type { LinksFunction } from "@remix-run/node";
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: "stylesheet",
-      href: "app/components/Foxes/foxes.css",
-    },
-  ];
-};
+// export const links: LinksFunction = () => {
+//   return [
+//     {
+//       rel: "stylesheet",
+//       href: "app/components/Foxes/foxes.css",
+//     },
+//   ];
+// };
 
 export default function FoxLogo() {
   return (

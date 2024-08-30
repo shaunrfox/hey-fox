@@ -1,19 +1,19 @@
 import { useEffect, useRef } from "react";
-import type { LinksFunction } from "@remix-run/node";
+// import type { LinksFunction } from "@remix-run/node";
 import { Link, useLocation } from "@remix-run/react";
 import Rule from "../Rule";
 import FoxLogo, { links as foxLinks } from "~/components/Foxes/FoxLogo";
 import FoxLogoOutline from "~/components/Foxes/FoxLogoOutline";
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: "stylesheet",
-      href: "app/components/Header/header.css",
-    },
-    ...foxLinks(),
-  ];
-};
+// export const links: LinksFunction = () => {
+//   return [
+//     {
+//       rel: "stylesheet",
+//       href: "app/components/Header/header.css",
+//     },
+//     ...foxLinks(),
+//   ];
+// };
 
 export function Navbar() {
   const { pathname } = useLocation();

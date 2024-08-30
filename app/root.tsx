@@ -6,14 +6,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Header, { links as headerLinks } from "./components/Header";
-import Footer, { links as footerLinks } from "./components/Footer/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer/Footer";
 
 export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: "app/styles/global.css",
+      href: "assets/main.css",
     },
     {
       rel: "icon",
@@ -25,8 +25,8 @@ export const links: LinksFunction = () => {
       href: "assets/favicon.ico",
       type: "image/x-icon",
     },
-    ...headerLinks(),
-    ...footerLinks(),
+    // ...headerLinks(),
+    // ...footerLinks(),
   ];
 };
 
