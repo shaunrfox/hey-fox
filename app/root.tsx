@@ -13,7 +13,7 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: "assets/main.css",
+      href: "assets/index.css",
     },
     {
       rel: "icon",
@@ -25,8 +25,6 @@ export const links: LinksFunction = () => {
       href: "assets/favicon.ico",
       type: "image/x-icon",
     },
-    // ...headerLinks(),
-    // ...footerLinks(),
   ];
 };
 

@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "build:remix": "remix vite:build",
-    "build:scss": "sass app/styles/main.scss:public/assets/main.css",
+    "build:scss": "sass app/styles:public/assets",
     "build": "npm run build:remix &&npm run build:scss",
     "dev:remix": "remix vite:dev",
-    "dev:scss": "sass --watch app/styles/main.scss:public/assets/main.css",
+    "dev:scss": "sass --watch app/styles:public/assets",
     "dev": "concurrently \"npm run dev:scss\" \"npm run dev:remix\"",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "preview": "vite preview",

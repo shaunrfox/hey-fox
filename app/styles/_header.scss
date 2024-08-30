@@ -1,12 +1,9 @@
-@use "../../styles/variables" as *;
+@use "variables" as *;
 
 header {
   display: flex;
   flex-direction: column;
   gap: $space-10;
-  // width: 100%;
-  // max-width: $max-width;
-  // padding: 0 $space-8;
   background-color: $gray-90;
   color: $gray-50;
   font-family: $font-stack-mono;
@@ -32,10 +29,6 @@ header {
     width: 100%;
     justify-content: space-between;
 
-    // @include breakpoint(large) {
-    //   gap: $space-8;
-    // }
-
     @include breakpoint(medium-step) {
       flex-direction: column;
       gap: $space-10;
@@ -49,8 +42,22 @@ header {
   }
 
   .name {
+    width: fit-content;
     @extend .ibm-plex-mono-bold;
     color: $yellow-60;
+    text-decoration: none;
+    cursor: pointer;
+    background-size: 100% 2px;
+    background-image: none;
+
+    &:hover {
+      background-image: linear-gradient(
+        90deg,
+        $yellow-60 0%,
+        $yellow-60 50%,
+        $yellow-60 100%
+      );
+    }
   }
 
   li {
@@ -67,12 +74,12 @@ header {
       background-image: none;
 
       &:hover {
-        color: $gray-10;
+        color: $yellow-60;
         background-image: linear-gradient(
           90deg,
-          $gray-10 0%,
-          $gray-10 50%,
-          $gray-10 100%
+          $yellow-60 0%,
+          $yellow-60 50%,
+          $yellow-60 100%
         );
       }
     }
