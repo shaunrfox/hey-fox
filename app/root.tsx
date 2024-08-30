@@ -45,7 +45,7 @@ export default function App() {
         />
         <meta
           name="keywords"
-          content="Shaun Fox, Shaun, Sean, Shawn, Fox, Design, Austin, Designer, Principal Product Designer, Product Designer, Lead UX Designer, UX Designer, Portfolio, Web Design, design technologist"
+          content="Shaun Fox, Shaun, Sean, Shawn, Fox, Design, Austin, Designer, Principal Product Designer, Product Designer, Lead UX Designer, UX Designer, Portfolio, Web Design, design technologist, strategy, design systems, design leadership, operations, user-centric"
         />
         <Meta />
         <Links />
