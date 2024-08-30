@@ -1,0 +1,402 @@
+@use "variables" as *;
+
+:root {
+  background-color: $gray-90;
+  color: $text-color;
+  font-family: $font-stack-serif;
+  font-size: 16px;
+  line-height: $line-height;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
+  font-size: 1rem;
+  color: $gray-5;
+
+  // set max width for all immediate children
+  > * {
+    max-width: $max-width;
+    width: 100%;
+    padding: 0 $space-10;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p,
+li {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 1.75;
+}
+
+main ul {
+  padding-left: $space-10;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  padding-top: $space-3;
+
+  @include breakpoint(medium-step) {
+    padding-left: $space-8;
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+    padding-left: 0;
+
+    &::before {
+      position: absolute;
+      left: -1.25rem;
+      content: "\2013";
+      display: inline-block;
+      width: $space-6;
+      height: $space-6;
+      margin-right: $space-2;
+      color: $gray-60;
+    }
+  }
+}
+
+a {
+  @extend .ibm-plex-mono-regular;
+  color: $yellow-50;
+  text-decoration: none;
+  background-image: linear-gradient(
+    90deg,
+    rgba($yellow-50, 0.5) 0%,
+    rgba($yellow-50, 0.5) 50%,
+    rgba($yellow-50, 0.5) 100%
+  );
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  transition: background-image 300ms ease-in-out;
+
+  &:hover {
+    animation: squiggle 0.3s infinite;
+    background-image: linear-gradient(
+      90deg,
+      $yellow-50 0%,
+      $yellow-50 50%,
+      $yellow-50 100%
+    );
+  }
+
+  &:focus-visible {
+    animation: squiggle 0.3s infinite;
+    outline-style: solid;
+    outline-color: $pink-60;
+    outline-width: 1px;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+.rule {
+  background-color: $gray-80;
+  width: 100%;
+  height: 1px;
+}
+
+.callout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+  gap: $space-6;
+
+  .ice {
+    position: relative;
+    cursor: pointer;
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👀</text></svg>") 15 15,auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 0;
+      aspect-ratio: 5/4;
+      z-index: 1;
+      background-image: url('/assets/vanilla-ice.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: height 100ms ease-in-out;
+    }
+
+    &:hover::before {
+      height: 150px;
+      transition: height 100ms ease-in-out;
+    }
+  }
+}
+
+::selection {
+  color: $gray-0;
+  background: $pink-80;
+}
+
+// Home styles
+.home {
+  display: flex;
+  gap: $space-14;
+  padding-top: $space-10;
+  padding-bottom: $space-10;
+  color: $gray-10;
+
+  @include breakpoint(medium) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-main {
+    display: flex;
+    flex-direction: column;
+    gap: $space-8;
+  }
+
+  .home-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    border-radius: 10px;
+    border: 10px solid $gray-100;
+    background: $gray-100;
+    min-width: 150px;
+    max-width: 225px;
+
+    img {
+      border-radius: 5px;
+    }
+
+    a {
+      margin: $space-6 0 $space-5;
+    }
+  }
+
+  h1 {
+    font-size: $space-7;
+    font-weight: 200;
+    margin-bottom: $space-4;
+
+    span {
+      filter: saturate(0.5);
+      padding-left: $space-3;
+      color: $pink-60;
+    }
+  }
+}
+
+// CV styles
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-8;
+  width: 100%;
+  padding-top: $space-10;
+  padding-bottom: $space-10;
+
+  @include breakpoint(large) {
+    gap: $space-10;
+  }
+
+  h2 {
+    @extend .ibm-plex-mono-regular;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $yellow-60;
+    margin-bottom: -$space-4;
+    width: 100%;
+  }
+
+  .callout p {
+    padding-bottom: 1.75rem;
+
+    @include breakpoint(large) {
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+.cv-component {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: $space-5;
+
+  @include breakpoint(medium) {
+    margin-bottom: $space-10;
+  }
+}
+
+.cv-info {
+  grid-column: 1 / -1;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: $space-2;
+  width: 100%;
+  padding: $space-9 0 $space-4;
+  background-color: $gray-90;
+  @extend .ibm-plex-mono-regular;
+  color: $gray-50;
+  margin-bottom: $space-4;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: $space-9;
+    background: linear-gradient(to bottom, $gray-90, transparent);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  @include breakpoint(large) {
+    padding-top: $space-4;
+  }
+
+  .cv-title {
+    color: $gray-10;
+  }
+
+}
+
+.cv-desc {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  
+  p + p, ul + p {
+    margin-top: $space-6;
+  }
+
+  @include breakpoint(medium) {
+    grid-column: 1 / -1;
+  }
+}
+
+// Services styles
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-12;
+  padding-top: $space-10;
+  padding-bottom: $space-10;
+
+  .service {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: $space-14;
+
+    p {
+      text-wrap: balance;
+    }
+    
+    @include breakpoint(medium) {
+      display: flex;
+      flex-direction: column;
+      gap: $space-10;
+    }
+
+  }
+
+  .service-header {
+    display: flex;
+    flex-direction: column;
+    gap: $space-6;
+  }
+
+  h2 {
+    @extend .ibm-plex-mono-regular;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $yellow-60;
+    margin-bottom: $space-4;
+    padding-top: $space-3;
+  }
+
+  ul {
+    // padding-left: $space-10;
+    // display: flex;
+    // flex-direction: column;
+    // gap: $space-5;
+    padding-left: 0;
+    // padding-top: $space-3;
+
+    @include breakpoint(medium) {
+      padding-left: $space-8;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  li {
+    position: relative;
+    @extend .ibm-plex-mono-regular;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0;
+
+    &::before {
+      position: absolute;
+      left: -1.25rem;
+      content: "\2013";
+      display: inline-block;
+      width: $space-6;
+      height: $space-6;
+      margin-right: $space-2;
+      color: $gray-60;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  p {
+    font-size: 1.125rem;
+    font-weight: 200;
+    line-height: 1.75;
+  }
+}

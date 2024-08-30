@@ -1,0 +1,67 @@
+@use "../../styles/variables" as *;
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-10;
+  padding-bottom: $space-10;
+  background-color: $gray-90;
+
+  p {
+    font-family: $font-stack-mono;
+    font-size: 0.8rem;
+    color: $gray-10;
+  }
+
+  .fox-logo {
+    width: 24px;
+    height: 24px;
+    fill: $gray-50;
+    // cursor: pointer;
+
+    // &:hover {
+    //   fill: $gray-10;
+    // }
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-8;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  a {
+    color: $gray-10;
+    background-image: linear-gradient(
+      90deg,
+      rgba($gray-10, 0.5) 0%,
+      rgba($gray-10, 0.5) 50%,
+      rgba($gray-10, 0.5) 100%
+    );
+
+    &:hover {
+      background-image: linear-gradient(
+        90deg,
+        $gray-10 0%,
+        $gray-10 50%,
+        $gray-10 100%
+      );
+    }
+  }
+}
+
+.copyright {
+  color: $gray-50;
+}

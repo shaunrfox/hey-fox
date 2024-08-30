@@ -1,0 +1,338 @@
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.8.3 (last updated 21.1.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap");
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+pre {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+.eczar {
+  font-family: "Piazzolla", Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", Andale Mono, monaco, Consolas, Lucida Console, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: "IBM Plex Mono", Andale Mono, monaco, Consolas, Lucida Console, monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.breakpoint-tester {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  background: #bea41f;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 15px;
+  z-index: 1001;
+}
+.breakpoint-tester:before {
+  content: "default";
+}
+@media (max-width: 1200px) {
+  .breakpoint-tester:before {
+    content: "extra-large";
+  }
+}
+@media (max-width: 1100px) {
+  .breakpoint-tester:before {
+    content: "large";
+  }
+}
+@media (max-width: 800px) {
+  .breakpoint-tester:before {
+    content: "medium";
+  }
+}
+@media (max-width: 600px) {
+  .breakpoint-tester:before {
+    content: "medium-step";
+  }
+}
+@media (max-width: 400px) {
+  .breakpoint-tester:before {
+    content: "small";
+  }
+}
+@media (max-width: 380px) {
+  .breakpoint-tester:before {
+    content: "dang-small";
+  }
+}
+
+.fox-logo {
+  fill: #dfe1e2;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+@media (max-width: 1100px) {
+  header .fox-logo {
+    animation: zap-reverse 20s infinite;
+  }
+}
+
+.blink {
+  animation: blinking 12s infinite;
+}
+
+.fox-logo-outline {
+  animation: squiggle 0.3s infinite;
+  fill: none;
+  stroke: #eacb2a;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.fox-logo-skull {
+  fill: #dfe1e2;
+}
+
+.fox-logo-outline,
+.fox-logo-skull {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+@media (max-width: 1100px) {
+  .fox-logo-outline,
+  .fox-logo-skull {
+    animation: zap 20s infinite;
+  }
+}
+
+header .logo {
+  position: absolute;
+  right: calc(100% + 2.5rem);
+  width: 5.125rem;
+  padding-top: 0.25rem;
+  z-index: 10;
+}
+@media (max-width: 1100px) {
+  header .logo {
+    position: relative;
+    right: 0;
+  }
+}
+header .logo a {
+  position: sticky;
+  top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background: none;
+}
+header .logo a:hover .fox-logo {
+  opacity: 0;
+}
+header .logo a:hover .fox-logo-outline,
+header .logo a:hover .fox-logo-skull {
+  opacity: 1;
+}
+
+@keyframes squiggle {
+  0% {
+    filter: url("#squiggly-0");
+  }
+  25% {
+    filter: url("#squiggly-1");
+  }
+  50% {
+    filter: url("#squiggly-2");
+  }
+  75% {
+    filter: url("#squiggly-3");
+  }
+  100% {
+    filter: url("#squiggly-4");
+  }
+}
+@keyframes zap {
+  0% {
+    opacity: 0;
+  }
+  78.75% {
+    opacity: 0;
+  }
+  79% {
+    opacity: 1;
+  }
+  81% {
+    opacity: 1;
+  }
+  81.25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes zap-reverse {
+  0% {
+    opacity: 1;
+  }
+  78.75% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 0;
+  }
+  81.25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  24.25% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  25.75% {
+    opacity: 0;
+  }
+  84.25% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  85.75% {
+    opacity: 0;
+  }
+  86.25% {
+    opacity: 1;
+  }
+  87% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=foxes.css.map */

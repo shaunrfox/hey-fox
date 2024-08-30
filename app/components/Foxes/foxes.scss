@@ -1,0 +1,177 @@
+@use "../../styles/variables" as *;
+
+.fox-logo {
+  fill: $gray-10;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+
+  @include breakpoint(large) {
+    header & {
+      animation: zap-reverse 20s infinite;
+    }
+  }
+}
+
+.blink {
+  animation: blinking 12s infinite;
+}
+
+.fox-logo-outline {
+  animation: squiggle 0.3s infinite;
+  fill: none;
+  stroke: $yellow-60;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.fox-logo-skull {
+  fill: $gray-10;
+}
+
+.fox-logo-outline,
+.fox-logo-skull {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+
+  @include breakpoint(large) {
+    animation: zap 20s infinite;
+  }
+}
+
+header {
+  .logo {
+    position: absolute;
+    right: calc(100% + #{$space-10});
+    width: 5.125rem;
+    padding-top: $space-3;
+    z-index: 10;
+
+    @include breakpoint(large) {
+      position: relative;
+      right: 0;
+    }
+
+    a {
+      position: sticky;
+      top: $space-8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      background: none;
+
+      &:hover {
+        .fox-logo {
+          opacity: 0;
+        }
+
+        .fox-logo-outline,
+        .fox-logo-skull {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes squiggle {
+  0% {
+    filter: url("#squiggly-0");
+  }
+  25% {
+    filter: url("#squiggly-1");
+  }
+  50% {
+    filter: url("#squiggly-2");
+  }
+  75% {
+    filter: url("#squiggly-3");
+  }
+  100% {
+    filter: url("#squiggly-4");
+  }
+}
+
+@keyframes zap {
+  0% {
+    opacity: 0;
+  }
+  78.75% {
+    opacity: 0;
+  }
+  79% {
+    opacity: 1;
+  }
+  81% {
+    opacity: 1;
+  }
+  81.25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zap-reverse {
+  0% {
+    opacity: 1;
+  }
+  78.75% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 0;
+  }
+  81.25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  24.25% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  25.75% {
+    opacity: 0;
+  }
+  84.25% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  85.75% {
+    opacity: 0;
+  }
+  86.25% {
+    opacity: 1;
+  }
+  87% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

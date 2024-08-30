@@ -1,0 +1,125 @@
+@import "reset";
+
+$gray-0: #ffffff;
+$gray-1: #fbfcfd;
+$gray-2: #f7f9fa;
+$gray-3: #f5f6f7;
+$gray-4: #f1f3f6;
+$gray-5: #edeff0;
+$gray-10: #dfe1e2;
+$gray-20: #c6cace;
+$gray-30: #a9aeb1;
+$gray-40: #8d9297;
+$gray-50: #71767a;
+$gray-60: #565c65;
+$gray-70: #3d4551;
+$gray-80: #2d2e2f;
+$gray-90: #1c1d1f;
+$gray-100: #000000;
+
+$yellow-0: #fff7d1;
+$yellow-10: #fdf1b3;
+$yellow-20: #fbeb96;
+$yellow-30: #f8e479;
+$yellow-40: #f4dc5e;
+$yellow-50: #f0d444;
+$yellow-60: #eacb2a;
+$yellow-70: #bea41f;
+$yellow-80: #907d15;
+$yellow-90: #62540d;
+$yellow-100: #322a06;
+
+$pink-0: #feeded;
+$pink-10: #fce1e1;
+$pink-20: #fbd5d5;
+$pink-30: #f9caca;
+$pink-40: #f7bfbf;
+$pink-50: #f4b4b4;
+$pink-60: #f1aaaa;
+$pink-70: #c28787;
+$pink-80: #926565;
+$pink-90: #624343;
+$pink-100: #312121;
+
+$space-1: 0.0625rem; // 1px
+$space-2: 0.125rem; // 2px
+$space-3: 0.25rem; // 4px
+$space-4: 0.5rem; // 8px
+$space-5: 0.75rem; // 12px
+$space-6: 1rem; // 16px
+$space-7: 1.25rem; // 20px
+$space-8: 1.5rem; // 24px
+$space-9: 2rem; // 32px
+$space-10: 2.5rem; // 40px
+$space-11: 3rem; // 48px
+$space-12: 4rem; // 64px
+$space-13: 4.5rem; // 72px
+$space-14: 5rem; // 80px
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap");
+
+$font-stack-mono: "IBM Plex Mono", Andale Mono, monaco, Consolas, Lucida Console,
+  monospace;
+$font-stack-serif: "Piazzolla", Book Antiqua, Palatino, Palatino Linotype,
+  Palatino LT STD, Georgia, serif;
+$text-color: $gray-5;
+$line-height: 1.5em;
+$max-width: 55rem;
+
+.eczar {
+  font-family: $font-stack-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: $font-stack-mono;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: $font-stack-mono;
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Media Query Syntax: // @include breakpoint(small) { width: 60%; }
+@mixin breakpoint($point) {
+	@if $point == extra-large {
+		@media (max-width: 1200px) { @content; }
+	} @else if $point == large {
+		@media (max-width: 1100px) { @content; }
+	} @else if $point == medium {
+		@media (max-width: 800px) { @content; }
+	} @else if $point == medium-step {
+		@media (max-width: 600px) { @content; }
+	} @else if $point == small {
+		@media (max-width: 400px)  { @content; }
+	} @else if $point == dang-small {
+		@media (max-width: 380px)  { @content; }
+	}
+}
+
+// drop in a div with this class to visualize your breakpoints as you scale the page
+.breakpoint-tester {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+  width: fit-content;
+	background: $yellow-70;
+	color: $gray-100;
+	font-size: 20px;
+	padding: 10px 15px;
+	z-index: 1001;
+
+	&:before { content: 'default'; }
+
+	@include breakpoint(extra-large) { &:before { content: 'extra-large'; } }
+	@include breakpoint(large) { &:before { content: 'large'; } }
+	@include breakpoint(medium) { &:before { content: 'medium'; } }
+	@include breakpoint(medium-step) { &:before { content: 'medium-step'; } }
+	@include breakpoint(small) { &:before { content: 'small'; } }
+	@include breakpoint(dang-small) { &:before { content: 'dang-small'; } }
+}
