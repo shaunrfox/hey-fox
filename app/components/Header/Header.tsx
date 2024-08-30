@@ -9,7 +9,7 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: "/app/components/Header/header.css",
+      href: "app/components/Header/header.css",
     },
     ...foxLinks(),
   ];

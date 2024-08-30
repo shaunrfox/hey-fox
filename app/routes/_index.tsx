@@ -40,7 +40,7 @@ export default function Index() {
         </p>
       </div>
       <div className="home-aside">
-        <img src="/assets/shaun-photo.jpg" alt="Shaun Fox" />
+        <img src="assets/shaun-photo.jpg" alt="Shaun Fox" />
         <Link to="mailto:hello@okshaun.com">hello@okshaun.com</Link>
       </div>
     </div>

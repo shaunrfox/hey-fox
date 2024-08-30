@@ -1,4 +1,14 @@
+import Box from "~/components/Box";
 import Rule from "../components/Rule";
+
+// const iceStyle = {
+//   "& > ::before": {
+//     backgroundColor: "pink",
+//     width: "150px",
+//     height: "150px",
+//     backgroundImage: "url('app/assets/vanilla-ice.png')",
+//   },
+// };
 
 export default function ServicesRoute() {
   return (
@@ -12,7 +22,12 @@ export default function ServicesRoute() {
         <p>
           {" "}
           If you have a problem,{" "}
-          <span className="ice">yo, I&rsquo;ll solve it,</span>{" "}
+          <span
+            className="ice"
+            // style={{ ...iceStyle, display: "inline-block" }}
+          >
+            yo, I&rsquo;ll solve it,
+          </span>{" "}
           <a
             href="mailto:hello@shaunfox.com"
             style={{ fontSize: "0.8em", whiteSpace: "nowrap" }}

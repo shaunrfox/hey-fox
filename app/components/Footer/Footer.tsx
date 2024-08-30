@@ -1,5 +1,5 @@
 import type { LinksFunction } from "@remix-run/node";
-import { Link, useLocation } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import FoxLogo from "../Foxes/FoxLogo";
 import Rule from "../Rule";
 
@@ -7,7 +7,7 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: "/app/components/Footer/footer.css",
+      href: "app/components/Footer/footer.css",
     },
   ];
 };
@@ -30,13 +30,25 @@ export default function Footer(): JSX.Element {
         <FoxLogo />
         <div className="footer-links">
           <Link to="mailto:hello@okshaun.com">Mail</Link>
-          <Link to="https://www.linkedin.com/in/shaunrfox" target="_blank">
+          <Link
+            to="https://www.linkedin.com/in/shaunrfox"
+            target="_blank"
+            rel="noreferrer"
+          >
             LinkedIn
           </Link>
-          <Link to="http://codepen.io/shaunrfox/" target="_blank">
+          <Link
+            to="http://codepen.io/shaunrfox/"
+            target="_blank"
+            rel="noreferrer"
+          >
             CodePen
           </Link>
-          <Link to="https://github.com/shaunrfox" target="_blank">
+          <Link
+            to="https://github.com/shaunrfox"
+            target="_blank"
+            rel="noreferrer"
+          >
             GitHub
           </Link>
         </div>

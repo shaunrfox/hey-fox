@@ -4,7 +4,7 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: "/app/components/Foxes/foxes.css",
+      href: "app/components/Foxes/foxes.css",
     },
   ];
 };

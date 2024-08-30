@@ -13,16 +13,16 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: "/app/styles/global.css",
+      href: "app/styles/global.css",
     },
     {
       rel: "icon",
-      href: "/assets/favicon.ico",
+      href: "assets/favicon.ico",
       type: "image/x-icon",
     },
     {
       rel: "shortcut icon",
-      href: "/assets/favicon.ico",
+      href: "assets/favicon.ico",
       type: "image/x-icon",
     },
     ...headerLinks(),

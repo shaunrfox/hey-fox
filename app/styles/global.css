@@ -296,7 +296,7 @@ a:focus-visible {
   height: 0;
   aspect-ratio: 5/4;
   z-index: 1;
-  background-image: url("/assets/vanilla-ice.png");
+  background-image: url("../../assets/vanilla-ice.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
