@@ -1,9 +1,9 @@
-import { type MetaFunction } from "@remix-run/react";
+// import { type MetaFunction } from "@remix-run/react";
 import { Link } from "@remix-run/react";
 
-export const meta: MetaFunction = () => {
-  return [{ title: "okshaun.com | Principal Product Designer" }];
-};
+// export const meta: MetaFunction = () => {
+//   return [{ title: "Shaun Fox | Principal Product Designer" }];
+// };
 
 export default function Index() {
   return (

@@ -1,8 +1,12 @@
+**/.sass-cache
+**/.sass-cache/*
+/.cache
+
+.DS_Store
+assets/.DS_Store
+
 node_modules
 
-/.cache
 /build
 /public/build
 .env
-
-.DS_Store

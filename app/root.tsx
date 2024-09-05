@@ -29,7 +29,7 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-  return [{ title: "okshaun.com" }];
+  return [{ title: "Shaun Fox | Principal Product Designer" }];
 };
 
 export default function App() {
@@ -39,6 +39,7 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
+        <meta title="Shaun Fox | Principal Product Designer" />
         <meta
           name="description"
           content="I'm an experienced Product Designer living in Austin, TX, with my beautiful wife and daughters."
